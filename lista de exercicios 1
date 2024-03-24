@@ -1,0 +1,86 @@
+1) Faça um programa que calcule e mostre o volume de uma esfera sendo fornecido o valor de seu raio (R). A fórmula para calcular o volume é: (4.0/3.0) * 3.14159 * R * R * R. 2).
+
+#include<stdio.h>
+float raio,vol;
+int main(){
+printf("Digite o valor do raio\n");
+scanf("%f",&raio);
+vol=(4.0/3.0) * 3.14159 * raio*raio*raio;
+printf("\nO volume da esfera e %.2f\n",vol);
+return 0;
+}
+
+2) Faça um algoritmo que leia três notas de um aluno, calcule e imprima a média final deste aluno. Considerar que a média é ponderada e que o peso é 2, 3 e 5. Fórmula = n1*0.2 + n2*0.3 + n3*0.5. 3).
+
+#include<stdio.h>
+float n1,n2,n3,media;
+int main(){
+printf("Digite a nota 1\n");
+scanf("%f",&n1);
+printf("Digite a nota 2\n");
+scanf("%f",&n2);
+printf("Digite a nota 3\n");
+scanf("%f",&n3);
+media=(n1*2 + n2*3 + n3*5)/10;
+printf("A média final do aluno é: %.2f\n",media);
+return 0;
+}
+
+3) Faça um programa para calcular o valor pago a um aplicativo de taxi. A taxa inicial da corrida é de R$ 4,90 mais R$ 3,00 o km rodado. 
+Faça um programa para calcular o valor da corrida de uma pessoa. Mostre na tela o km rodado e o preço a ser pago pelo passageiro.
+
+#include<stdio.h>
+float dis,preco;
+int main(){
+printf("Quantos quilômetros foram percorridos?\n");
+scanf("%f",&dis);
+preco=4.9+(dis*3.0);
+printf("Voce percorreu %.2f Km e o valor a ser pago e R$ %.2f\n",dis,preco);
+return 0;
+}
+
+4) Faça um programa que peça 2 números inteiros e um número real. Calcule e mostre:
+a) o produto do dobro do primeiro com metade do segundo.
+b) a soma do triplo do primeiro com o terceiro.
+c) o terceiro elevado ao cubo.
+
+#include<stdio.h>
+#include<math.h>
+int n1,n2;
+float n3;
+int main(){
+printf("Digite um numero inteiro\n");
+scanf("%d",&n1);
+printf("Digite outro numero inteiro\n");
+scanf("%d",&n2);
+printf("Digite um numero real\n");
+scanf("%f",&n3);
+printf("\nO produto do dobro do primeiro com metade do segundo
+e %.2f\n",(2*n1)*(n2/2.0));
+printf("\nA soma do triplo do primeiro com o terceiro %.2f\n",(3*n1)+n3);
+printf("\nO terceiro elevado ao cubo %.2f\n",pow(n3,3));
+return 0;
+}
+
+5) (URI-1015) Leia os quatro valores correspondentes aos eixos x e y de dois pontos quaisquer no plano, p1(x1,y1) e p2(x2,y2) e calcule a distância entre eles, mostrando 4 casas decimais após a vírgula, segundo a fórmula:
+distancia = sqrt(pow((x2-x1),2) + pow((n2-n1),2))
+Entrada: O arquivo de entrada contém duas linhas de dados. A primeira linha contém dois valores de ponto flutuante: x1 y1 e a segunda linha contém dois valores de ponto flutuante x2 y2.
+Saída: Calcule e imprima o valor da distância segundo a fórmula fornecida, com 4 casas após o ponto decimal.
+#include<stdio.h>
+#include<math.h>
+float x1,x2,n1,n2,dis;
+int main(){
+printf("Coordenadas do ponto 1\n");
+printf("Digite a coordenada em x\n");
+scanf("%f",&x1);
+printf("Digite a coordenada em y\n");
+scanf("%f",&n1);
+printf("Coordenadas do ponto 2\n");
+printf("Digite a coordenada em x\n");
+scanf("%f",&x2);
+printf("Digite a coordenada em y\n");
+scanf("%f",&n2);
+dis=sqrt(pow((x2-x1),2)+pow((n2-n1),2));
+printf("\nA distancia entre os dois pontos e %.4f\n",dis);
+return 0;
+}
