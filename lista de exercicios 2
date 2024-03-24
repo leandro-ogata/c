@@ -1,0 +1,171 @@
+1) Leia um número inteiro que representa um código de DDD para discagem interurbana. Em seguida, informe à qual cidade o DDD pertence conforme a tabela abaixo
+
+DDD    DESTINATION
+61     Brasilia
+71     Salvador
+11     São Paulo
+21     Rio de Janeiro
+32     Juiz de Fora
+19     Campinas
+27     Vitória
+31     Belo Horizonte
+
+Se a entrada for qualquer outro DDD que não esteja presente na tabela acima, o programa deverá informar: DDD não cadastrado
+Entrada: A entrada consiste em um único valor inteiro.
+Saída: Imprima o nome da cidade correspondente ao DDD existente na entrada. Imprima DDD nao cadastrado caso não existir DDD correspondente ao número digitado.
+
+#include<stdio.h>
+int ddd;
+int main(){
+printf("Digite o codigo de DDD da cidade\n");
+scanf("%d",&ddd);
+if(ddd==61){
+printf("\nBrasilia\n");
+}
+else if(ddd==71){
+printf("\nSalvador\n");
+}
+else if(ddd==11){
+printf("\nSao Paulo\n");
+}
+else if(ddd==21){
+printf("\nRio de Janeiro\n");
+}
+else if(ddd==32){
+printf("\nJuiz de Fora\n");
+}
+else if(ddd==19){
+printf("\nCampinas\n");
+}
+else if(ddd==27){
+printf("\nVitoria\n");
+}
+else if(ddd==31){
+printf("\nBelo Horizonte\n");
+}
+else{
+printf("\nDDD nao cadastrado\n");
+}
+return 0;
+}
+
+2) Você deve fazer um programa que leia um valor qualquer e apresente uma mensagem dizendo em qual dos seguintes intervalos ([0,25], (25,50], (50,75], (75,100]) este valor se encontra. 
+Obviamente se o valor não estiver em nenhum destes intervalos, deverá ser impressa a mensagem “Fora de intervalo”.
+
+símbolo (representa "maior que". Por exemplo:
+[0,25] indica valores entre 0 e 25.0000, inclusive eles.
+(25,50] indica valores maiores que 25 Ex: 25.00001 até o valor 50.0000000
+Entrada: O arquivo de entrada contém um número com ponto flutuante qualquer.
+Saída: A saída deve ser uma mensagem conforme exemplo abaixo.
+
+#include<stdio.h>
+float n;
+int main(){
+printf("Digite um numero\n");
+scanf("%f",&n);
+if(n>=0 && n<=100){
+if(n<=25){
+printf("\nIntervalo [0,25]\n");
+}
+else if(n>25 && n<=50){
+printf("\nIntervalo (25,50]\n");
+}
+else if(n>50 && n<=75){
+printf("\nIntervalo (50,75]\n");
+}
+else{
+printf("\nIntervalo (75,100]\n");
+}//if
+else{
+printf("\nFora de intervalo\n");
+}
+return 0;
+}
+
+3) Com base na tabela abaixo, escreva um programa que leia o código de um item e a quantidade deste item. A seguir, calcule e mostre o valor da conta a pagar
+
+CÓDIGO     PRODUTO               PREÇO
+1          Cachorro Quente       R$4.00
+2          X-Salada              R$4.50
+3          X-Bacon               R$5.00
+4          Torrada Simples       R$2.00 
+5          Refrigerante          R$1.50
+
+Entrada: O arquivo de entrada contém dois valores inteiros correspondentes ao código e à quantidade de um
+item conforme tabela acima.
+Saída: O arquivo de saída deve conter a mensagem "Total: R$ " seguido pelo valor a ser pago, com 2 casas
+após o ponto decimal
+
+#include<stdio.h>
+int cod,qde;
+int main(){
+printf("Digite o código do produto\n");
+scanf("%d",&cod);
+if(cod>=1&&cod<=5){
+printf("Digite a quantidade de produto\n");
+scanf("%d",&qde);
+if(cod==1){
+printf("\nTotal: R$ %.2f\n",qde*4.00);
+}
+else if(cod==2){
+printf("\nTotal: R$ %.2f\n",qde*4.50);
+}
+else if(cod==3){
+printf("\nTotal: R$ %.2f\n",qde*5.00);
+}
+else if(cod==4){
+printf("\nTotal: R$ %.2f\n",qde*2.00);
+}
+else if(cod==5){
+printf("\nTotal: R$ %.2f\n",qde*1.50);
+}
+}
+/if
+else{
+printf("\nCodigo invalido\n");
+}
+return 0;
+}
+
+4) Uma fruteira está vendendo frutas com a seguinte tabela de preços:
+
+            Até 5 Kg          Acima de 5 Kg
+Morango     R$ 2,50 por Kg    R$ 2,20 por Kg
+Maçã        R$ 1,80 por Kg    R$ 1,50 por Kg
+Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente. 
+Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá ainda um desconto de 10% sobre este total
+
+#include<stdio.h>
+float mor,maca,qde,preco,precomo,precoma;
+int main(){
+printf("Digite a quantidade de morangos adquiridos:\n");
+scanf("%f",&mor);
+printf("Digite a quantidade de macas adquiridas:\n");
+scanf("%f",&maca);
+qde=maca+mor;
+if(qde>0){
+if(mor>0 && mor<=5){
+precomo=mor*2.50;
+}
+else if (mor>5){
+precomo=mor*2.20;
+}
+if(maca>0 && maca<=5){
+precoma=maca*1.80;
+}
+else if (maca>5){
+precoma=maca*1.50;
+}
+preco=precomo+precoma;
+if(qde>8 || preco>25){
+printf("\nValor total da compra R$ %.2f\n",preco*0.9);
+}
+else{
+printf("\nValor total da compra R$ %.2f\n",preco);
+}
+}//if
+else{
+printf("\nNão houve compra\n");
+}
+return 0;
+}
