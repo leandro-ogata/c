@@ -1,0 +1,85 @@
+1) Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares. 
+
+#include <stdio.h>
+int i,num,cont,par,impar;
+int main () {
+for (i=0;i<10;i++){
+printf("digite um numero\n");
+scanf("%d",&num);
+if((i%2)==0)
+par++;
+else
+impar++;
+}
+printf("A quantidade de numeros pares e %d \n", par);
+printf("A quantidade de numeros impares e %d \n", impar);
+return 0;
+}
+
+2) Faça um programa que peça para n pessoas a sua idade, ao final o programa deverá verificar se a média de idade da turma varia entre [0 e 25], [26 e 60] e [maior que 60];  e então, dizer se a turma é jovem, adulta ou idosa, conforme a média calculada.
+
+#include <stdio.h>
+int i,id,acum,med;
+int main (){
+for(i=0;i<5;i++){
+printf("digite sua idade\n");
+scanf("%d",&id);
+acum+=id;
+med=acum/5;
+}
+if(med>=0 && med<=25){
+printf("a turma e jovem, media de %d anos\n",med);
+}
+else if(med>=26 && med<=60){
+printf("a turma e adulta, media de %d anos\n",med);
+}
+else{
+printf("a turma e idosa, media de %d anos\n",med);
+}
+return 0;
+}
+
+3) Numa eleição existem três candidatos. Faça um programa que peça o número total de eleitores (n). Peça para cada eleitor votar e ao final mostrar o número de votos de cada candidato. 
+
+#include <stdio.h>
+int i,voto,cont,a,b,c;
+int main () {
+for (i=0;i<6;i++){
+printf("digite seu voto\n");
+scanf("%d",&voto);
+if(voto==1){
+a++;
+}
+else if (voto==2){
+b++;
+}
+else if(voto==3){
+c++;
+}
+}
+printf("o candidato a teve %d votos \n", a);
+printf("o candidato b teve %d votos \n", b);
+printf("o candidato c teve %d votos \n", c);
+return 0;
+}
+
+4) Leia 1 valor inteiro N, que representa o número de casos de teste que vem a seguir. Cada caso de teste consiste de 3 valores reais, cada um deles com uma casa decimal. Apresente a média ponderada para cada um destes conjuntos de 3 valores,
+sendo que o primeiro valor tem peso 2, o segundo valor tem peso 3 e o terceiro valor tem peso 5.
+Entrada: O arquivo de entrada contém um valor inteiro N na primeira linha. Cada N linha a seguir contém um caso de teste com três valores com uma casa decimal cada valor.
+Saída: Para cada caso de teste, imprima a média ponderada dos 3 valores.
+
+#include <stdio.h>
+int main(){
+float n1,n2,n3,total,med;
+int i,num;
+printf("digite um numero inteiro\n");
+scanf("%d",&num);
+for(i=1;i<=num;i++){
+printf("digite 3 valores com 1 casa decimal\n");
+scanf("%f %f %f",&n1,&n2,&n3);
+total=n1*2.0+n2*3.0+n3*5.0;
+med=total/10.0;
+printf("o valor da media ponderada e %.1f\n",med);
+}
+return 0;
+}
